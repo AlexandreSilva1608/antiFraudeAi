@@ -37,6 +37,19 @@
 			<artifactId>spring-boot-starter</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Biblioteca Stanford CoreNLP para análise de sentimento -->
+		<dependency>
+			<groupId>edu.stanford.nlp</groupId>
+			<artifactId>stanford-corenlp</artifactId>
+			<version>4.5.7</version> <!-- Versão mais recente disponível -->
+		</dependency>
+		<dependency>
+			<groupId>edu.stanford.nlp</groupId>
+			<artifactId>stanford-corenlp</artifactId>
+			<version>4.5.7</version> <!-- Versão mais recente disponível -->
+			<classifier>models</classifier>
+		</dependency>
+
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -57,6 +70,12 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
 	<repositories>
 		<repository>
@@ -66,6 +85,11 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
+		</repository>
+		<repository>
+			<id>central</id>
+			<name>Maven Central Repository</name>
+			<url>https://repo.maven.apache.org/maven2</url>
 		</repository>
 	</repositories>
 
